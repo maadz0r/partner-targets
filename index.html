@@ -109,21 +109,19 @@
     tr:hover td { background: #333; }
     tr.row-hidden { display: none; }
 
-    /* ===== СТИЛИ ДЛЯ ЛОГОТИПОВ (вместо звезд) ===== */
     .warm-cell { 
         text-align: left; 
         width: 130px; 
-        white-space: nowrap; /* Чтобы логотипы не переносились на новую строку */
+        white-space: nowrap; 
     }
     .logo-img {
-        width: 18px;          /* Размер одного логотипа, как у звездочки */
+        width: 18px;
         height: 18px;
-        object-fit: contain;  /* Сохраняет пропорции картинки */
+        object-fit: contain;
         display: inline-block;
         vertical-align: middle;
-        margin-right: 3px;    /* Отступ между логотипами */
+        margin-right: 3px;
     }
-    /* Класс для неактивных (пустых) звезд, если захочешь добавить (сейчас просто пустое место) */
 
     .empty-msg {
         display: none;
@@ -147,6 +145,7 @@
     <button class="filter-btn" data-country="ru">🇷🇺 Russia</button>
     <button class="filter-btn" data-country="uz">🇺🇿 Uzbekistan</button>
     <button class="filter-btn" data-country="kz">🇰🇿 Kazakhstan</button>
+    <button class="filter-btn" data-country="uk">🇬🇧 United Kingdom</button>
     <button class="filter-btn" data-country="pt">🇵🇹 Portugal</button>
 
     <div class="divider"></div>
@@ -178,7 +177,7 @@
             <td><strong>Langame</strong></td>
             <td>Gaming ecosystem &amp; software integrator for PC clubs/cyberarenas in Russia &amp; CIS. Operates app, media, esports platform, and B2B software.</td>
             <td>Russia (CIS presence)</td>
-            <td class="warm-cell"></td> <!-- Скрипт сам вставит сюда 5 логотипов -->
+            <td class="warm-cell"></td>
             <td>CEO</td>
         </tr>
         <tr data-warmth="5">
@@ -304,6 +303,15 @@
             <td class="warm-cell"></td>
             <td>C-level</td>
         </tr>
+        <!-- NEW COMPANY START -->
+        <tr data-warmth="4">
+            <td><strong>Belissimo</strong></td>
+            <td>Leading pizza delivery chain in Uzbekistan. Operates a large network of pizzerias and delivery hubs across the country.</td>
+            <td>Uzbekistan</td>
+            <td class="warm-cell"></td>
+            <td>CMO</td>
+        </tr>
+        <!-- NEW COMPANY END -->
     </tbody>
 </table>
 </div>
@@ -347,6 +355,31 @@
 </table>
 </div>
 
+<!-- ================= UNITED KINGDOM ================= -->
+<div class="country-group" data-country="uk">
+<h2 class="country">🇬🇧 United Kingdom</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Key Business Facts (Revenue, Size, Industry)</th>
+            <th>Territory (HQ & Operations)</th>
+            <th>Warm Intro (1–5)</th>
+            <th>Target Position</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-warmth="4">
+            <td><strong>FACEIT</strong></td>
+            <td>Leading competitive gaming platform. Acquired by Savvy Games Group in 2022 ($1.5B). Major esports infrastructure and tournament organizer.</td>
+            <td>United Kingdom (London)</td>
+            <td class="warm-cell"></td>
+            <td>Senior Partnership</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
 <!-- ================= PORTUGAL ================= -->
 <div class="country-group" data-country="pt">
 <h2 class="country">🇵🇹 Portugal</h2>
@@ -374,8 +407,7 @@
 
 <script>
 (function () {
-    // 1. СНАЧАЛА ЗАПОЛНЯЕМ ЯЧЕЙКИ ЛОГОТИПАМИ
-    // Находим все строки, где есть атрибут data-warmth
+    // Заполняем логотипы
     var rows = document.querySelectorAll('tr[data-warmth]');
     var logoUrl = "https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png";
 
@@ -384,7 +416,6 @@
         var cell = row.querySelector('.warm-cell');
         
         if (cell) {
-            // Создаем картинки по количеству рейтинга
             var imagesHtml = '';
             for (var i = 0; i < warmth; i++) {
                 imagesHtml += '<img class="logo-img" src="' + logoUrl + '" alt="logo">';
@@ -393,7 +424,7 @@
         }
     });
 
-    // 2. ЛОГИКА ФИЛЬТРОВ (как было раньше)
+    // Логика фильтров
     var countryBtns = document.querySelectorAll('.filter-btn[data-country]');
     var warmthBtns  = document.querySelectorAll('.filter-btn[data-warmth]');
     var groups      = document.querySelectorAll('.country-group');
