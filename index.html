@@ -109,19 +109,21 @@
     tr:hover td { background: #333; }
     tr.row-hidden { display: none; }
 
-    .warm-cell { text-align: center; width: 90px; }
+    /* ===== СТИЛИ ДЛЯ ЛОГОТИПОВ (вместо звезд) ===== */
+    .warm-cell { 
+        text-align: left; 
+        width: 130px; 
+        white-space: nowrap; /* Чтобы логотипы не переносились на новую строку */
+    }
     .logo-img {
-        width: 28px;
-        height: 28px;
-        object-fit: contain;
+        width: 18px;          /* Размер одного логотипа, как у звездочки */
+        height: 18px;
+        object-fit: contain;  /* Сохраняет пропорции картинки */
         display: inline-block;
         vertical-align: middle;
+        margin-right: 3px;    /* Отступ между логотипами */
     }
-    .w5 { opacity: 1; filter: drop-shadow(0 0 4px #fff); }
-    .w4 { opacity: 0.85; }
-    .w3 { opacity: 0.6; }
-    .w2 { opacity: 0.4; }
-    .w1 { opacity: 0.2; }
+    /* Класс для неактивных (пустых) звезд, если захочешь добавить (сейчас просто пустое место) */
 
     .empty-msg {
         display: none;
@@ -136,7 +138,7 @@
 <body>
 
 <h1>🎯 Partner Target List — Cybersecurity Services</h1>
-<div class="subtitle">Grouped by country · Warm Intro scale 1–5 (logo opacity = heat)</div>
+<div class="subtitle">Grouped by country · Warm Intro scale 1–5 (Logo count = rating)</div>
 
 <!-- ===== FILTERS ===== -->
 <div class="filters">
@@ -176,49 +178,49 @@
             <td><strong>Langame</strong></td>
             <td>Gaming ecosystem &amp; software integrator for PC clubs/cyberarenas in Russia &amp; CIS. Operates app, media, esports platform, and B2B software.</td>
             <td>Russia (CIS presence)</td>
-            <td class="warm-cell"><img class="logo-img w5" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="5"></td>
+            <td class="warm-cell"></td> <!-- Скрипт сам вставит сюда 5 логотипов -->
             <td>CEO</td>
         </tr>
         <tr data-warmth="5">
             <td><strong>AKADO</strong></td>
             <td>Moscow-based telecom &amp; broadband operator (AKADO Telecom / COMKOR). Fiber network 18,000+ km. Serves 5,000+ commercial enterprises, 200+ banks, government entities.</td>
             <td>Russia (Moscow region)</td>
-            <td class="warm-cell"><img class="logo-img w5" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="5"></td>
+            <td class="warm-cell"></td>
             <td>CEO / CTO</td>
         </tr>
         <tr data-warmth="5">
             <td><strong>Alfa-Bank</strong></td>
             <td>Largest private bank in Russia. 42.7M retail clients, 2.3M+ SME clients. 800+ offices. 2025 9M net profit: RUB 190B. Phygital model with digital + physical.</td>
             <td>Russia</td>
-            <td class="warm-cell"><img class="logo-img w5" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="5"></td>
+            <td class="warm-cell"></td>
             <td>Senior BA</td>
         </tr>
         <tr data-warmth="5">
             <td><strong>Sunlight</strong></td>
             <td>#1 jewelry retail chain in Russia by sales volume. 2024 revenue: RUB 113B (incl. VAT). 500+ stores. High-tech focus; top omnichannel retailer.</td>
             <td>Russia</td>
-            <td class="warm-cell"><img class="logo-img w5" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="5"></td>
+            <td class="warm-cell"></td>
             <td>CTO</td>
         </tr>
         <tr data-warmth="4">
             <td><strong>Yandex</strong></td>
             <td>Russian multinational internet/tech corp. Search, eCommerce, transport, navigation, ads. Valuation ~$29B. Revenue ~$3.35B (latest FY). HQ Moscow; significant presence in Kazakhstan.</td>
             <td>Russia / Uzbekistan (and CIS)</td>
-            <td class="warm-cell"><img class="logo-img w4" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="4"></td>
+            <td class="warm-cell"></td>
             <td>—</td>
         </tr>
         <tr data-warmth="5">
             <td><strong>Sber</strong></td>
             <td>Largest banking group in Russia. 286,000+ employees, 14,000+ branches. State-controlled. Diversified into tech, e-commerce, and data services.</td>
             <td>Russia</td>
-            <td class="warm-cell"><img class="logo-img w5" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="5"></td>
+            <td class="warm-cell"></td>
             <td>Gref’s nephew (contact)</td>
         </tr>
         <tr data-warmth="2">
             <td><strong>Sibur</strong></td>
             <td>Largest integrated petrochemicals company in Russia. 36,000+ employees. 2025 revenue: RUB 1.049 trillion. 20+ production sites. Key products: polymers, rubbers, plastics.</td>
             <td>Russia</td>
-            <td class="warm-cell"><img class="logo-img w2" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="2"></td>
+            <td class="warm-cell"></td>
             <td>—</td>
         </tr>
     </tbody>
@@ -243,63 +245,63 @@
             <td><strong>Uzcard</strong></td>
             <td>National payment system of Uzbekistan (part of UCMG). Provides processing, card issuance, ATM/acquiring, and QR payments.</td>
             <td>Uzbekistan</td>
-            <td class="warm-cell"><img class="logo-img w4" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="4"></td>
+            <td class="warm-cell"></td>
             <td>HRD / CEO</td>
         </tr>
         <tr data-warmth="3">
             <td><strong>Korzinka</strong></td>
             <td>Fastest-growing grocery chain in Uzbekistan. 224+ stores, ~14,000 employees. Backed by IFC ($25M investment in 2024 for distribution center).</td>
             <td>Uzbekistan</td>
-            <td class="warm-cell"><img class="logo-img w3" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="3"></td>
+            <td class="warm-cell"></td>
             <td>HR</td>
         </tr>
         <tr data-warmth="3">
             <td><strong>Click</strong></td>
             <td>Leading Uzbek fintech / SuperApp. 20M+ users, 38%+ mobile payments market share. 2024 revenue growth +35.3%, net profit +37.5%. Halyk Bank acquired 49% in 2025.</td>
             <td>Uzbekistan</td>
-            <td class="warm-cell"><img class="logo-img w3" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="3"></td>
+            <td class="warm-cell"></td>
             <td>—</td>
         </tr>
         <tr data-warmth="4">
             <td><strong>Asterium</strong></td>
             <td>Joint-Stock Company licensed in Uzbekistan for crypto-asset activities (license CE #0006, issued 2026). Registered in Tashkent.</td>
             <td>Uzbekistan (Tashkent)</td>
-            <td class="warm-cell"><img class="logo-img w4" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="4"></td>
+            <td class="warm-cell"></td>
             <td>CMO</td>
         </tr>
         <tr data-warmth="4">
             <td><strong>Uzbekistan Airways</strong></td>
             <td>National carrier. 47+ Western aircraft, 90+ destinations, 28 countries with rep offices. 2024: 6M passengers (+20%), 40K flights (+25%). Group includes MRO, catering, training, helicopters, low-cost brand Silk Avia.</td>
             <td>Uzbekistan (Tashkent HQ; global routes)</td>
-            <td class="warm-cell"><img class="logo-img w4" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="4"></td>
+            <td class="warm-cell"></td>
             <td>CTO</td>
         </tr>
         <tr data-warmth="2">
             <td><strong>Payme</strong></td>
             <td>Leading payment system in Uzbekistan. Provides mobile wallet, P2P transfers, and merchant payment solutions.</td>
             <td>Uzbekistan</td>
-            <td class="warm-cell"><img class="logo-img w2" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="2"></td>
+            <td class="warm-cell"></td>
             <td>—</td>
         </tr>
         <tr data-warmth="3">
             <td><strong>Humo</strong></td>
             <td>National payment system of Uzbekistan. Operates processing center, card issuance, and payment infrastructure for banks.</td>
             <td>Uzbekistan</td>
-            <td class="warm-cell"><img class="logo-img w3" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="3"></td>
+            <td class="warm-cell"></td>
             <td>—</td>
         </tr>
         <tr data-warmth="3">
             <td><strong>Kapital Bank</strong></td>
             <td>Major private bank in Uzbekistan. Offers retail, corporate, and digital banking services.</td>
             <td>Uzbekistan</td>
-            <td class="warm-cell"><img class="logo-img w3" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="3"></td>
+            <td class="warm-cell"></td>
             <td>—</td>
         </tr>
         <tr data-warmth="5">
             <td><strong>Infin Bank</strong></td>
             <td>Private bank in Uzbekistan. Provides corporate, retail, and investment banking.</td>
             <td>Uzbekistan</td>
-            <td class="warm-cell"><img class="logo-img w5" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="5"></td>
+            <td class="warm-cell"></td>
             <td>C-level</td>
         </tr>
     </tbody>
@@ -324,21 +326,21 @@
             <td><strong>Freedom Finance</strong></td>
             <td>Investment company / broker, member of Kazakhstan Stock Exchange (KASE) since 2007. HQ in Almaty (Esentai Tower). Active in stocks, derivatives, FX, repo.</td>
             <td>Kazakhstan (Almaty)</td>
-            <td class="warm-cell"><img class="logo-img w4" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="4"></td>
+            <td class="warm-cell"></td>
             <td>CISO</td>
         </tr>
         <tr data-warmth="4">
             <td><strong>Olimpbet</strong></td>
             <td>Leading Kazakh bookmaker (operating via NetBet TOO, license #23019645). Active in sports sponsorship (6 federations, 7 football clubs), esports, and media.</td>
             <td>Kazakhstan / Uzbekistan</td>
-            <td class="warm-cell"><img class="logo-img w4" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="4"></td>
+            <td class="warm-cell"></td>
             <td>CMO</td>
         </tr>
         <tr data-warmth="3">
             <td><strong>TBC</strong></td>
             <td>Leading fintech/neobank operating in Kazakhstan and Uzbekistan. Provides digital banking, payments, and lending services.</td>
             <td>Kazakhstan / Uzbekistan</td>
-            <td class="warm-cell"><img class="logo-img w3" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="3"></td>
+            <td class="warm-cell"></td>
             <td>—</td>
         </tr>
     </tbody>
@@ -363,7 +365,7 @@
             <td><strong>NielsenIQ (NIQ)</strong></td>
             <td>Global consumer intelligence company (NYSE: NIQ). Provides market measurement, data analytics, and AI-driven consumer insights to retailers and brands.</td>
             <td>Portugal (global operations)</td>
-            <td class="warm-cell"><img class="logo-img w5" src="https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png" alt="5"></td>
+            <td class="warm-cell"></td>
             <td>PO</td>
         </tr>
     </tbody>
@@ -372,6 +374,26 @@
 
 <script>
 (function () {
+    // 1. СНАЧАЛА ЗАПОЛНЯЕМ ЯЧЕЙКИ ЛОГОТИПАМИ
+    // Находим все строки, где есть атрибут data-warmth
+    var rows = document.querySelectorAll('tr[data-warmth]');
+    var logoUrl = "https://raw.githubusercontent.com/maadz0r/partner-targets/main/logo.png";
+
+    rows.forEach(function(row) {
+        var warmth = parseInt(row.getAttribute('data-warmth'), 10);
+        var cell = row.querySelector('.warm-cell');
+        
+        if (cell) {
+            // Создаем картинки по количеству рейтинга
+            var imagesHtml = '';
+            for (var i = 0; i < warmth; i++) {
+                imagesHtml += '<img class="logo-img" src="' + logoUrl + '" alt="logo">';
+            }
+            cell.innerHTML = imagesHtml;
+        }
+    });
+
+    // 2. ЛОГИКА ФИЛЬТРОВ (как было раньше)
     var countryBtns = document.querySelectorAll('.filter-btn[data-country]');
     var warmthBtns  = document.querySelectorAll('.filter-btn[data-warmth]');
     var groups      = document.querySelectorAll('.country-group');
