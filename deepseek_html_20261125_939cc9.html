@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Partner Target List — Cybersecurity Services (Filterable)</title>
+<style>
+    body {
+        background: #1e1e1e;
+        color: #e0e0e0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        padding: 30px;
+    }
+    h1 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 6px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 10px;
+    }
+    .subtitle {
+        color: #888;
+        font-size: 13px;
+        margin-bottom: 24px;
+    }
+
+    /* ===== FILTER BUTTONS ===== */
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+        align-items: center;
+    }
+    .filters .label {
+        color: #777;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-right: 4px;
+    }
+    .filter-btn {
+        background: #2a2a2a;
+        color: #ccc;
+        border: 1px solid #444;
+        border-radius: 20px;
+        padding: 7px 16px;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        font-family: inherit;
+    }
+    .filter-btn:hover {
+        background: #3a3a3a;
+        color: #fff;
+        border-color: #666;
+    }
+    .filter-btn.active {
+        background: #ffffff;
+        color: #111;
+        border-color: #ffffff;
+        font-weight: 600;
+    }
+    .divider {
+        width: 1px;
+        height: 24px;
+        background: #444;
+        margin: 0 6px;
+    }
+
+    /* ===== TABLES ===== */
+    .country-group { margin-bottom: 10px; }
+    .country-group.hidden { display: none; }
+
+    h2.country {
+        font-size: 16px;
+        color: #ffffff;
+        margin: 32px 0 12px 0;
+        padding: 8px 14px;
+        background: linear-gradient(90deg, #3a3a3a, #2a2a2a);
+        border-left: 4px solid #fff;
+        border-radius: 4px;
+        letter-spacing: 0.5px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        background: #2a2a2a;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+    th {
+        background: #111;
+        color: #aaa;
+        text-align: left;
+        padding: 12px 16px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid #444;
+    }
+    td {
+        padding: 12px 16px;
+        border-bottom: 1px solid #3a3a3a;
+        font-size: 13px;
+        vertical-align: middle;
+    }
+    tr:hover td { background: #333; }
+    tr.row-hidden { display: none; }
+
+    .warm-cell { text-align: center; width: 90px; }
+    .logo-img {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .w5 { opacity: 1; filter: drop-shadow(0 0 4px #fff); }
+    .w4 { opacity: 0.85; }
+    .w3 { opacity: 0.6; }
+    .w2 { opacity: 0.4; }
+    .w1 { opacity: 0.2; }
+
+    .empty-msg {
+        display: none;
+        color: #777;
+        font-style: italic;
+        padding: 20px;
+        text-align: center;
+    }
+    .empty-msg.visible { display: block; }
+</style>
+</head>
+<body>
+
+<h1>🎯 Partner Target List — Cybersecurity Services</h1>
+<div class="subtitle">Grouped by country · Warm Intro scale 1–5 (logo opacity = heat)</div>
+
+<!-- ===== FILTERS ===== -->
+<div class="filters">
+    <span class="label">Country:</span>
+    <button class="filter-btn active" data-country="all">All</button>
+    <button class="filter-btn" data-country="ru">🇷🇺 Russia</button>
+    <button class="filter-btn" data-country="uz">🇺🇿 Uzbekistan</button>
+    <button class="filter-btn" data-country="kz">🇰🇿 Kazakhstan</button>
+    <button class="filter-btn" data-country="pt">🇵🇹 Portugal</button>
+
+    <div class="divider"></div>
+
+    <span class="label">Warmth:</span>
+    <button class="filter-btn active" data-warmth="all">All</button>
+    <button class="filter-btn" data-warmth="hot">🔥 Hot (4–5)</button>
+    <button class="filter-btn" data-warmth="warm">⚡ Warm (3)</button>
+    <button class="filter-btn" data-warmth="cold">❄️ Cold (1–2)</button>
+</div>
+
+<div class="empty-msg" id="emptyMsg">No companies match the selected filters.</div>
+
+<!-- ================= RUSSIA ================= -->
+<div class="country-group" data-country="ru">
+<h2 class="country">🇷🇺 Russia</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Key Business Facts (Revenue, Size, Industry)</th>
+            <th>Territory (HQ & Operations)</th>
+            <th>Warm Intro (1–5)</th>
+            <th>Target Position</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-warmth="5">
+            <td><strong>Langame</strong></td>
+            <td>Gaming ecosystem &amp; software integrator for PC clubs/cyberarenas in Russia &amp; CIS. Operates app, media, esports platform, and B2B software.</td>
+            <td>Russia (CIS presence)</td>
+            <td class="warm-cell"><img class="logo-img w5" src="YOUR_LOGO_URL" alt="5"></td>
+            <td>CEO</td>
+        </tr>
+        <tr data-warmth="5">
+            <td><strong>AKADO</strong></td>
+            <td>Moscow-based telecom &amp; broadband operator (AKADO Telecom / COMKOR). Fiber network 18,000+ km. Serves 5,000+ commercial enterprises, 200+ banks, government entities.</td>
+            <td>Russia (Moscow region)</td>
+            <td class="warm-cell"><img class="logo-img w5" src="YOUR_LOGO_URL" alt="5"></td>
+            <td>CEO / CTO</td>
+        </tr>
+        <tr data-warmth="5">
+            <td><strong>Alfa-Bank</strong></td>
+            <td>Largest private bank in Russia. 42.7M retail clients, 2.3M+ SME clients. 800+ offices. 2025 9M net profit: RUB 190B. Phygital model with digital + physical.</td>
+            <td>Russia</td>
+            <td class="warm-cell"><img class="logo-img w5" src="YOUR_LOGO_URL" alt="5"></td>
+            <td>Senior BA</td>
+        </tr>
+        <tr data-warmth="5">
+            <td><strong>Sunlight</strong></td>
+            <td>#1 jewelry retail chain in Russia by sales volume. 2024 revenue: RUB 113B (incl. VAT). 500+ stores. High-tech focus; top omnichannel retailer.</td>
+            <td>Russia</td>
+            <td class="warm-cell"><img class="logo-img w5" src="YOUR_LOGO_URL" alt="5"></td>
+            <td>CTO</td>
+        </tr>
+        <tr data-warmth="4">
+            <td><strong>Yandex</strong></td>
+            <td>Russian multinational internet/tech corp. Search, eCommerce, transport, navigation, ads. Valuation ~$29B. Revenue ~$3.35B (latest FY). HQ Moscow; significant presence in Kazakhstan.</td>
+            <td>Russia / Uzbekistan (and CIS)</td>
+            <td class="warm-cell"><img class="logo-img w4" src="YOUR_LOGO_URL" alt="4"></td>
+            <td>—</td>
+        </tr>
+        <tr data-warmth="5">
+            <td><strong>Sber</strong></td>
+            <td>Largest banking group in Russia. 286,000+ employees, 14,000+ branches. State-controlled. Diversified into tech, e-commerce, and data services.</td>
+            <td>Russia</td>
+            <td class="warm-cell"><img class="logo-img w5" src="YOUR_LOGO_URL" alt="5"></td>
+            <td>Gref’s nephew (contact)</td>
+        </tr>
+        <tr data-warmth="2">
+            <td><strong>Sibur</strong></td>
+            <td>Largest integrated petrochemicals company in Russia. 36,000+ employees. 2025 revenue: RUB 1.049 trillion. 20+ production sites. Key products: polymers, rubbers, plastics.</td>
+            <td>Russia</td>
+            <td class="warm-cell"><img class="logo-img w2" src="YOUR_LOGO_URL" alt="2"></td>
+            <td>—</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<!-- ================= UZBEKISTAN ================= -->
+<div class="country-group" data-country="uz">
+<h2 class="country">🇺🇿 Uzbekistan</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Key Business Facts (Revenue, Size, Industry)</th>
+            <th>Territory (HQ & Operations)</th>
+            <th>Warm Intro (1–5)</th>
+            <th>Target Position</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-warmth="4">
+            <td><strong>Uzcard</strong></td>
+            <td>National payment system of Uzbekistan (part of UCMG). Provides processing, card issuance, ATM/acquiring, and QR payments.</td>
+            <td>Uzbekistan</td>
+            <td class="warm-cell"><img class="logo-img w4" src="YOUR_LOGO_URL" alt="4"></td>
+            <td>HRD / CEO</td>
+        </tr>
+        <tr data-warmth="3">
+            <td><strong>Korzinka</strong></td>
+            <td>Fastest-growing grocery chain in Uzbekistan. 224+ stores, ~14,000 employees. Backed by IFC ($25M investment in 2024 for distribution center).</td>
+            <td>Uzbekistan</td>
+            <td class="warm-cell"><img class="logo-img w3" src="YOUR_LOGO_URL" alt="3"></td>
+            <td>HR</td>
+        </tr>
+        <tr data-warmth="3">
+            <td><strong>Click</strong></td>
+            <td>Leading Uzbek fintech / SuperApp. 20M+ users, 38%+ mobile payments market share. 2024 revenue growth +35.3%, net profit +37.5%. Halyk Bank acquired 49% in 2025.</td>
+            <td>Uzbekistan</td>
+            <td class="warm-cell"><img class="logo-img w3" src="YOUR_LOGO_URL" alt="3"></td>
+            <td>—</td>
+        </tr>
+        <tr data-warmth="4">
+            <td><strong>Asterium</strong></td>
+            <td>Joint-Stock Company licensed in Uzbekistan for crypto-asset activities (license CE #0006, issued 2026). Registered in Tashkent.</td>
+            <td>Uzbekistan (Tashkent)</td>
+            <td class="warm-cell"><img class="logo-img w4" src="YOUR_LOGO_URL" alt="4"></td>
+            <td>CMO</td>
+        </tr>
+        <tr data-warmth="4">
+            <td><strong>Uzbekistan Airways</strong></td>
+            <td>National carrier. 47+ Western aircraft, 90+ destinations, 28 countries with rep offices. 2024: 6M passengers (+20%), 40K flights (+25%). Group includes MRO, catering, training, helicopters, low-cost brand Silk Avia.</td>
+            <td>Uzbekistan (Tashkent HQ; global routes)</td>
+            <td class="warm-cell"><img class="logo-img w4" src="YOUR_LOGO_URL" alt="4"></td>
+            <td>CTO</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<!-- ================= KAZAKHSTAN ================= -->
+<div class="country-group" data-country="kz">
+<h2 class="country">🇰🇿 Kazakhstan</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Key Business Facts (Revenue, Size, Industry)</th>
+            <th>Territory (HQ & Operations)</th>
+            <th>Warm Intro (1–5)</th>
+            <th>Target Position</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-warmth="4">
+            <td><strong>Freedom Finance</strong></td>
+            <td>Investment company / broker, member of Kazakhstan Stock Exchange (KASE) since 2007. HQ in Almaty (Esentai Tower). Active in stocks, derivatives, FX, repo.</td>
+            <td>Kazakhstan (Almaty)</td>
+            <td class="warm-cell"><img class="logo-img w4" src="YOUR_LOGO_URL" alt="4"></td>
+            <td>CISO</td>
+        </tr>
+        <tr data-warmth="4">
+            <td><strong>Olimpbet</strong></td>
+            <td>Leading Kazakh bookmaker (operating via NetBet TOO, license #23019645). Active in sports sponsorship (6 federations, 7 football clubs), esports, and media.</td>
+            <td>Kazakhstan / Uzbekistan</td>
+            <td class="warm-cell"><img class="logo-img w4" src="YOUR_LOGO_URL" alt="4"></td>
+            <td>CMO</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<!-- ================= PORTUGAL ================= -->
+<div class="country-group" data-country="pt">
+<h2 class="country">🇵🇹 Portugal</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Key Business Facts (Revenue, Size, Industry)</th>
+            <th>Territory (HQ & Operations)</th>
+            <th>Warm Intro (1–5)</th>
+            <th>Target Position</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-warmth="5">
+            <td><strong>NielsenIQ (NIQ)</strong></td>
+            <td>Global consumer intelligence company (NYSE: NIQ). Provides market measurement, data analytics, and AI-driven consumer insights to retailers and brands.</td>
+            <td>Portugal (global operations)</td>
+            <td class="warm-cell"><img class="logo-img w5" src="YOUR_LOGO_URL" alt="5"></td>
+            <td>PO</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<script>
+(function () {
+    var countryBtns = document.querySelectorAll('.filter-btn[data-country]');
+    var warmthBtns  = document.querySelectorAll('.filter-btn[data-warmth]');
+    var groups      = document.querySelectorAll('.country-group');
+    var emptyMsg    = document.getElementById('emptyMsg');
+
+    var state = { country: 'all', warmth: 'all' };
+
+    function matchesWarmth(w, filter) {
+        if (filter === 'all') return true;
+        if (filter === 'hot')  return w >= 4;
+        if (filter === 'warm') return w === 3;
+        if (filter === 'cold') return w <= 2;
+        return true;
+    }
+
+    function applyFilters() {
+        var anyVisible = false;
+
+        groups.forEach(function (group) {
+            var groupCountry = group.getAttribute('data-country');
+            var countryOk = (state.country === 'all') || (state.country === groupCountry);
+
+            var rows = group.querySelectorAll('tbody tr');
+            var visibleInGroup = 0;
+
+            rows.forEach(function (row) {
+                var w = parseInt(row.getAttribute('data-warmth'), 10);
+                var warmthOk = matchesWarmth(w, state.warmth);
+                var show = countryOk && warmthOk;
+
+                if (show) {
+                    row.classList.remove('row-hidden');
+                    visibleInGroup++;
+                } else {
+                    row.classList.add('row-hidden');
+                }
+            });
+
+            if (countryOk && visibleInGroup > 0) {
+                group.classList.remove('hidden');
+                anyVisible = true;
+            } else {
+                group.classList.add('hidden');
+            }
+        });
+
+        emptyMsg.classList.toggle('visible', !anyVisible);
+    }
+
+    countryBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            countryBtns.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            state.country = btn.getAttribute('data-country');
+            applyFilters();
+        });
+    });
+
+    warmthBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            warmthBtns.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            state.warmth = btn.getAttribute('data-warmth');
+            applyFilters();
+        });
+    });
+})();
+</script>
+
+</body>
+</html>
